@@ -1,0 +1,22 @@
+<div class="container-fluid" ng-init="get(j.id)">
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+			<form class="well" ng-submit="edit(juego)" ng-for="for j in juego">
+				<div class="form-group">
+					<label>-Titulo del juego: </label><br>
+					<input class="form-control" type="text" name="titulo" placeholder="Titulo..." ng-model="juego.titulo">
+				</div>
+				<div class="form-group">
+					<label>-Genero: </label><br>
+					<input class="form-control" type="text" name="genero" placeholder="Genero..." ng-model="juego.genero">
+				</div>
+				<div class="form-group">
+					<label>-Estudio: </label><br>
+					<input class="form-control" type="text" name="estudio" placeholder="Estudio..." ng-model="juego.estudio">
+				</div>
+				<button type="submit" class="btn btn-primary">Editar Juego</button>
+			</form>
+			<pre> {{juego | json}}</pre>
+		</div>
+	</div>
+</div>

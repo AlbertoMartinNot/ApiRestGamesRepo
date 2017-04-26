@@ -1,0 +1,23 @@
+games_homepage:
+    path:     /
+    defaults: { _controller: GamesBundle:Default:index }
+
+games_list:
+    path:     /list
+    defaults:  { _controller: GamesBundle:Game:list }
+
+games_delete: 
+    path:    /delete/{id}
+    defaults: { _controller: GamesBundle:Game:delete }  
+
+games_add:
+    path:   /add
+    defaults: { _controller: GamesBundle:Game:add }
+    
+games_put:
+    path:    /put/{id}
+    defaults: { _controller: GamesBundle:Game:put } 
+
+games_get:
+    path:   /get/{id}
+    defaults: { _controller: GamesBundle:Game:get }      

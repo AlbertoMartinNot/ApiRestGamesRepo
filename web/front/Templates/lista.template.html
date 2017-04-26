@@ -1,0 +1,5 @@
+<div class="container-fluid" ng-init="mostrar()">
+	<ul class="list-group">
+		<li class="list-group-item"  ng-repeat="j in juego">{{j.id}}- {{j.titulo}} / {{j.genero}} / {{j.estudio}} <br><a class="pull-left btn btn-primary" href="#!/edit/{{j.id}}">Editar</a> <button class="btn btn-primary" ng-click="borrar(j.id)">Eliminar</button></li>
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+			<form class="well" ng-submit="add(game)">
+				<div class="form-group">
+					<label>-Titulo del juego:</label><br>
+					<input class="form-control" type="text" name="titulo" placeholder="Titulo..." ng-model="game.titulo">
+				</div>
+				<div class="form-group">
+					<label>-Genero: </label><br>
+					<input class="form-control" type="text" name="genero" placeholder="Genero..." ng-model="game.genero">
+				</div>
+				<div class="form-group">
+					<label>-Estudio: </label><br>
+					<input class="form-control" type="text" name="estudio" placeholder="Estudio..." ng-model="game.estudio">
+				</div>
+				<button type="submit" class="btn btn-primary">Añadir Juego</button>
+			</form>
+			<pre> {{game | json}}</pre>
+		</div>
+	</div>
+</div>
