@@ -1,4 +1,4 @@
-var juegos=angular.module('juegos', ['ngRoute']);
+var juegos=angular.module('juegos', ['ngRoute','ngAnimate']);
 
 juegos.config(function($routeProvider){
 

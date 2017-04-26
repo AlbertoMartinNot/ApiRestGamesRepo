@@ -1,5 +1,20 @@
-<div class="container-fluid" ng-init="mostrar()">
+<style type="text/css">
+	.animate.ng-enter{
+		transition: 300ms ease-in-out all;
+	}
+	.animate.ng-leave{
+		transition: 300ms ease-in-out all;
+	}
+	.animate.ng-leave.ng-leave-active{
+		opacity: 0;
+	}
+	.animate.ng-enter.ng-enter-active{
+		opacity: 1
+	}
+</style>
+
+<div class="well container-fluid col-lg-6 col-lg-offset-3" ng-init="mostrar()">
 	<ul class="list-group">
-		<li class="list-group-item"  ng-repeat="j in juego">{{j.id}}- {{j.titulo}} / {{j.genero}} / {{j.estudio}} <br><a class="pull-left btn btn-primary" href="#!/edit/{{j.id}}">Editar</a> <button class="btn btn-primary" ng-click="borrar(j.id)">Eliminar</button></li>
+		<label class="text-muted">Filtrar Lista: </label> <input type="text" name="fil" placeholder="Filtrar por..." ng-model="filt">
+		<li class="animate media list-group-item"  ng-repeat="j in juego | filter:filt | orderBy:'titulo'" style="font-size: 18px; height: 80px;"><strong>- {{j.titulo}}</strong> / {{j.genero}} / {{j.estudio}} <br> <button class="btn btn-danger pull-right" ng-click="borrar(j.id)"> <span class="glyphicon glyphicon-trash"></span> Eliminar </button><a class="pull-right btn btn-primary" href="#!/edit/{{j.id}}"> <span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
 	</ul>
-</div>
