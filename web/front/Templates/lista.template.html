@@ -3,7 +3,7 @@
 	<ul class="list-group">
 		<label class="text-muted">Filtrar Lista: </label>
 		<input type="text" name="fil" placeholder="Filtrar por..." ng-model="filt">&nbsp;&nbsp;
-		<label class="text-muted">Ordenar por: </label> <select class="selectpicker" ng-model='ord'><option value="titulo">Ascendente</option><option value="-titulo">Descendente</option><option value="genero">Genero</option></select>
+		<label class="text-muted">Ordenar por: </label> <select class="select" ng-model='ord'><option value="titulo">Ascendente</option><option value="-titulo">Descendente</option><option value="genero">Genero</option></select>
 
 		<li class="animate media list-group-item"  ng-repeat="j in juego | filter:filt | orderBy:ord" style="font-size: 18px; height: 80px;">
 			<strong>- {{j.titulo}}</strong> / {{j.genero}} / {{j.estudio}} <br> 
