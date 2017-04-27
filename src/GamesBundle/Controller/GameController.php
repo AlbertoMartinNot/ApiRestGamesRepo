@@ -66,7 +66,6 @@ class GameController extends FOSRestController{
 		$titulo=$request->request->get('titulo');
 		$genero=$request->request->get('genero');
 		$estudio=$request->request->get('estudio');
-		echo($id);
 		$em=$this->getDoctrine()->getManager();
 		$game=$em->getRepository('GamesBundle:Game')->findOneById($id);
 		$game->setTitulo($titulo);
