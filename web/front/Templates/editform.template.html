@@ -1,7 +1,8 @@
 <div class="container-fluid" ng-init="get(j.id)">
 	<div class="row">
-		<div class="well col-lg-6 col-lg-offset-3">
-			<form name="myForm"  ng-submit="edit(juego)" ng-for="for j in juego">
+		<div class="col-lg-6 col-lg-offset-3">
+			<h2 style="text-align: center; text-decoration: underline grey;">Edita el juego</h2>
+			<form class="well" name="myForm"  ng-submit="edit(juego)" ng-for="for j in juego">
 				<div class="form-group" ng-class="{ 'has-error' : myForm.titulo.$invalid && !myForm.titulo.$pristine }">
 					<label>-Titulo del juego: </label><br>
 					<input class="form-control" type="text" name="titulo" placeholder="Titulo..." ng-model="juego.titulo" ng-minlength="2" ng-maxlength="40" required>
@@ -29,7 +30,7 @@
 						<span class="help-block" ng-show="myForm.estudio.$error.maxlength">*Campo demasiado largo.</span>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">Editar Juego</button>
+				<button type="submit" class="btn btn-primary" style="border: 1px solid black" ng-disabled="myForm.$invalid">Editar Juego</button>
 			</form>
 		</div>
 	</div>
