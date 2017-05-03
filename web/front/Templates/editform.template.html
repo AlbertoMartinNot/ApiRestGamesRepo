@@ -1,10 +1,7 @@
-<div class="container-fluid" ng-init="get(j.id)">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<h2 style="text-align: center; text-decoration: underline grey;">Edita el juego</h2>
-			<div class="alert alert-success" role="alert" ng-show="alerta">
-				<strong>Editado!</strong> El juego ha sido editado correctamente.
-			</div>
 			<form class="well" name="myForm"  ng-submit="edit(juego)" ng-for="for j in juego">
 				<div class="form-group" ng-class="{ 'has-error' : myForm.titulo.$invalid && !myForm.titulo.$pristine }">
 					<label>Titulo del juego: </label><br>
