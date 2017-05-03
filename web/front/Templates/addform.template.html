@@ -1,20 +1,37 @@
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
-			<form class="well" ng-submit="add(game)">
-				<div class="form-group">
-					<label>-Titulo del juego:</label><br>
-					<input class="form-control" type="text" name="titulo" placeholder="Titulo..." ng-model="game.titulo">
+			<h2 style="text-align: center; text-decoration: underline grey;">Añade un juego</h2>
+			<form name="myForm" class="well" ng-submit="add(game)" novalidate>
+				<div class="form-group" ng-class="{ 'has-error' : myForm.titulo.$invalid && !myForm.titulo.$pristine }">
+					<label>Titulo del juego:</label><br>
+					<input class="form-control" type="text" name="titulo" placeholder="Titulo..." ng-model="game.titulo" ng-minlength="2" ng-maxlength="40" required>
+					<div role="alert">
+						<span class="help-block" ng-show="myForm.titulo.$invalid && !myForm.titulo.$pristine && myForm.titulo.$error.required ">*Campo requerido.</span>
+						<span class="help-block" ng-show="myForm.titulo.$error.minlength">*Campo demasiado corto.</span>
+						<span class="help-block" ng-show="myForm.titulo.$error.maxlength">*Campo demasiado largo.</span>
+					</div>
 				</div>
-				<div class="form-group">
-					<label>-Genero: </label><br>
-					<input class="form-control" type="text" name="genero" placeholder="Genero..." ng-model="game.genero">
+				<div class="form-group" ng-class="{ 'has-error' : myForm.genero.$invalid && !myForm.genero.$pristine }">
+					<label>Genero: </label><br>
+					<input class="form-control" type="text" name="genero" placeholder="Genero..." ng-model="game.genero" ng-minlength="2" ng-maxlength="20" required>
+					<div role="alert">
+						<span class="help-block" ng-show="myForm.genero.$invalid && !myForm.genero.$pristine && myForm.genero.$error.required">*Campo requerido.</span>
+						<span class="help-block" ng-show="myForm.genero.$error.minlength">*Campo demasiado corto.</span>
+						<span class="help-block" ng-show="myForm.genero.$error.maxlength">*Campo demasiado largo.</span>
+					</div>
 				</div>
-				<div class="form-group">
-					<label>-Estudio: </label><br>
-					<input class="form-control" type="text" name="estudio" placeholder="Estudio..." ng-model="game.estudio">
+				<div class="form-group" ng-class="{ 'has-error' : myForm.estudio.$invalid && !myForm.estudio.$pristine }">
+					<label>Estudio: </label><br>
+					<input class="form-control" type="text" name="estudio" placeholder="Estudio..." ng-model="game.estudio" ng-minlength="2" ng-maxlength="30" required>
+					<div role="alert">
+						<span class="help-block" ng-show="myForm.estudio.$invalid && !myForm.estudio.$pristine && myForm.estudio.$error.required">*Campo requerido.</span>
+						<span class="help-block" ng-show="myForm.estudio.$error.minlength">*Campo demasiado corto.</span>
+						<span class="help-block" ng-show="myForm.estudio.$error.maxlength">*Campo demasiado largo.</span>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-primary" style="border: 1px solid black">Añadir Juego</button>
+				<button type="submit" class="btn btn-primary" style="border: 1px solid black" ng-disabled="myForm.$invalid">Añadir Juego</button>
 			</form>
 		</div>
 	</div>
